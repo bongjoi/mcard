@@ -13,6 +13,9 @@
       ],
       "@shared/*": [
         "src/components/shared/*"
+      ],
+      "@contexts/*": [
+        "src/contexts/*"
       ]
     }
   }
