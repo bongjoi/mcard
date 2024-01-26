@@ -16,6 +16,12 @@
       ],
       "@contexts/*": [
         "src/contexts/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
       ]
     }
   }
