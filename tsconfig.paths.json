@@ -27,7 +27,7 @@
         "src/remote/*"
       ],
       "@constants": [
-        "src/constants/index.ts"
+        "src/constants/index"
       ]
     }
   }
