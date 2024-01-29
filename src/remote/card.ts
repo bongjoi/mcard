@@ -4,7 +4,9 @@ import {
   QuerySnapshot,
   query,
   limit,
-  startAfter
+  startAfter,
+  doc,
+  getDoc
 } from 'firebase/firestore';
 import { store } from './firebase';
 
@@ -15,11 +17,11 @@ import { Card } from '@models/card';
 export async function getCards(pageParam?: QuerySnapshot<Card>) {
   const cardQuery =
     pageParam === undefined
-      ? query(collection(store, COLLECTIONS.CARD), limit(10))
+      ? query(collection(store, COLLECTIONS.CARD), limit(12))
       : query(
           collection(store, COLLECTIONS.CARD),
           startAfter(pageParam),
-          limit(10)
+          limit(12)
         );
 
   const cardSnapshot = await getDocs(cardQuery);
@@ -32,4 +34,13 @@ export async function getCards(pageParam?: QuerySnapshot<Card>) {
   }));
 
   return { items, lastVisible };
+}
+
+export async function getCard(id: string) {
+  const snapshot = await getDoc(doc(store, COLLECTIONS.CARD, id));
+
+  return {
+    id,
+    ...(snapshot.data() as Card)
+  };
 }
