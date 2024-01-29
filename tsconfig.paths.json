@@ -22,6 +22,12 @@
       ],
       "@pages/*": [
         "src/pages/*"
+      ],
+      "@remote/*": [
+        "src/remote/*"
+      ],
+      "@constants": [
+        "src/constants/index.ts"
       ]
     }
   }
