@@ -30,9 +30,14 @@ const buttonStyles = css`
 interface FixedBottomButtonProps {
   label: string;
   onClick: () => void;
+  disabled?: boolean;
 }
 
-function FixedBottomButton({ label, onClick }: FixedBottomButtonProps) {
+function FixedBottomButton({
+  label,
+  onClick,
+  disabled
+}: FixedBottomButtonProps) {
   const $portal_root = document.getElementById('root-portal');
 
   if ($portal_root === null) {
@@ -41,7 +46,13 @@ function FixedBottomButton({ label, onClick }: FixedBottomButtonProps) {
 
   return createPortal(
     <Container>
-      <Button size="medium" full={true} onClick={onClick} css={buttonStyles}>
+      <Button
+        size="medium"
+        disabled={disabled}
+        full={true}
+        onClick={onClick}
+        css={buttonStyles}
+      >
         {label}
       </Button>
     </Container>,
