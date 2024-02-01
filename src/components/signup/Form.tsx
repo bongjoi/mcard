@@ -64,6 +64,8 @@ function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
 
   const errors = useMemo(() => validate(formValues), [formValues]);
 
+  const isDisabled = Object.keys(errors).length !== 0;
+
   return (
     <Flex direction="column" css={formContainerStyles}>
       <TextField
@@ -112,7 +114,7 @@ function Form({ onSubmit }: { onSubmit: (formValues: FormValues) => void }) {
 
       <FixedBottomButton
         label="회원가입"
-        disabled={Object.keys(errors).length !== 0}
+        disabled={isDisabled}
         onClick={() => {
           onSubmit(formValues);
         }}

@@ -28,6 +28,12 @@
       ],
       "@constants": [
         "src/constants/index"
+      ],
+      "@atoms/*": [
+        "src/atoms/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
       ]
     }
   }
