@@ -29,6 +29,9 @@
       "@constants": [
         "src/constants/index"
       ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
       "@atoms/*": [
         "src/atoms/*"
       ],
