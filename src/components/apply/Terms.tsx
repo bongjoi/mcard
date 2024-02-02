@@ -4,8 +4,9 @@ import Agreement from '@shared/Agreement';
 import FixedBottomButton from '@shared/FixedBottomButton';
 
 import { termList } from '@constants/apply';
+import { ApplyValues } from '@models/apply';
 
-function Terms({ onNext }: { onNext: (terms: string[]) => void }) {
+function Terms({ onNext }: { onNext: (terms: ApplyValues['terms']) => void }) {
   const [termsAgreements, setTermsAgreements] = useState(() => {
     return termList.reduce<Record<string, boolean>>(
       (prev, term) => ({
