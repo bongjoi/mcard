@@ -25,6 +25,7 @@ export interface ApplyValues {
   isRf: boolean;
   isHipass: boolean;
   status: keyof typeof APPLY_STATUS;
+  step: number;
 }
 
 export interface Option {
