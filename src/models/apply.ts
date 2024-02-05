@@ -14,6 +14,9 @@ export interface ApplyValues {
   salary: string;
   creditScore: string;
   payDate: string;
+  isMaster: boolean;
+  isRf: boolean;
+  isHipass: boolean;
 }
 
 export interface Option {
